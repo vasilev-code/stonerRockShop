@@ -7,3 +7,4 @@
 3. Если Вы используете https, то: https://gitlab.com/PyCoding1/django3-ecommerce.git
 4. Прописать команду `python manage.py migrate`
 5. Запустить сервер - `python manage.py runserver`
+6. Не забудьте создать директорию **media**, куда будут сохраняться изображения для товара
