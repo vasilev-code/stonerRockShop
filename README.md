@@ -8,7 +8,7 @@
 4. Прописать следующие команды:
 - `python3 -m venv ДиректорияВиртуальногоОкружения`
 - `source ДиректорияВиртуальногоОкружения/bin/activate`
--  Перейти в директорию **django3-ecommerce**
+-  Перейти в директорию **django3-ecommerce-v2**
 - `pip install -r requirements.txt`
 - `python manage.py makemigrations`
 - `python manage.py migrate`
