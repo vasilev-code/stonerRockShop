@@ -12,13 +12,15 @@
         <img src="{{ product.image.url }}" class="img-fluid">
     </div>
     <div class="col-md-8">
-        <h3>{{ product.title }}</h3>
+        <!-- <p><img src= "{{ product.image.url }}"></p> -->
+        <h3>{{ product.band }}</h3>
         <p>Цена: {{ product.price }} руб.</p>
-        <p>Описание: {{ product.description }}</p>
+        <p>Жанр: {{ product.genre }}</p>
+        <p>Год выпуска: {{product.year }}</p>
         <hr>
         <a href="{% url 'add_to_cart' slug=product.slug %}"><button class="btn btn-danger">Добавить в корзину</button></a>
     </div>
-    <p class="mt-4">Характеристики:</p>
+    <!-- <p class="mt-4">Характеристики:</p> -->
     <table class="table">
       <tbody>
       {% for f_name, f_value in product.get_features.items %}

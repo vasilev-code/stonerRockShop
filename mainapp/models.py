@@ -22,15 +22,18 @@ class Category(models.Model):
 class Product(models.Model):
 
     category = models.ForeignKey(Category, verbose_name='Категория', on_delete=models.CASCADE)
-    title = models.CharField(max_length=255, verbose_name='Наименование')
+    image = models.ImageField(verbose_name='Изображение', null=True)
+    band = models.CharField(max_length=255, verbose_name='Группа', blank=True)
     slug = models.SlugField(unique=True)
-    image = models.ImageField(verbose_name='Изображение')
-    description = models.TextField(verbose_name='Описание', null=True)
+    genre = models.CharField(max_length=255, verbose_name="Жанр", blank=True)
+    year = models.IntegerField(null=True, verbose_name="Год выпуска")
     price = models.DecimalField(max_digits=9, decimal_places=2, verbose_name='Цена')
+    # image = models.ImageField(verbose_name='Изображение')
+    # description = models.TextField(verbose_name='Описание', null=True)
     features = models.ManyToManyField("specs.ProductFeatures", blank=True, related_name='features_for_product')
 
     def __str__(self):
-        return self.title
+        return self.band
 
     def get_absolute_url(self):
         return reverse('product_detail', kwargs={'slug': self.slug})
